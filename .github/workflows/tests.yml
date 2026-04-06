@@ -10,6 +10,8 @@ jobs:
         with:
           python-version: '3.12'
       - name: Install dependencies
-        run: pip install flask
+        run: |
+          pip install flask pytest python-dotenv
       - name: Run tests
-        run: python -m pytest test_app.py || python test_app.py
+        run: |
+          python -m pytest test_app.py
